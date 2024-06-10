@@ -1,3 +1,18 @@
 {
-	"name": "_UNIX_"
+    "name": "_UNIX_",
+    "rootNamespace": "",
+    "references": [
+        "GUID:ec96f6dc48fee4244bcebc247464e471",
+        "GUID:916df1a70e9220b4cb5f4d774dc00a56",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
