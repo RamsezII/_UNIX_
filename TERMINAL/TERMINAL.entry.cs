@@ -1,8 +1,6 @@
-using _ARK_;
-using _V2_;
 using TMPro;
 
-namespace _CORE_
+namespace _UNIX_
 {
     public partial class TERMINAL
     {

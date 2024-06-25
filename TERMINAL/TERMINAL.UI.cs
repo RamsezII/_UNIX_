@@ -1,11 +1,11 @@
-﻿using _ARK_;
+﻿using _UNIX_;
 using System.Text;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace _CORE_
+namespace _UNIX_
 {
     public partial class TERMINAL
     {

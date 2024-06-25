@@ -1,17 +1,17 @@
-﻿using _ARK_;
+﻿using UnityEngine;
 
-namespace _V2_
+namespace _UNIX_
 {
-    public class V2 : UIBUON
+    public class V2 : MonoBehaviour
     {
         public static V2 instance;
+        public bool toggled;
 
         //--------------------------------------------------------------------------------------------------------------
 
-        protected override void Awake()
+        protected virtual void Awake()
         {
             instance = this;
-            base.Awake();
         }
 
         //--------------------------------------------------------------------------------------------------------------
@@ -23,6 +23,14 @@ namespace _V2_
         }
 
         //--------------------------------------------------------------------------------------------------------------
+
+        public void Toggle(in bool value)
+        {
+            if (toggled == value)
+                return;
+            toggled = value;
+            gameObject.SetActive(value);
+        }
 
         public void OnClick_background()
         {

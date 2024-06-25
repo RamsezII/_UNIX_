@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _ARK_
+namespace _UNIX_
 {
     public class WAITER : BOSON
     {

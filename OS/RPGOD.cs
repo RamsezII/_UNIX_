@@ -1,8 +1,8 @@
-﻿using _ARK_;
+﻿using _UNIX_;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-namespace _CORE_
+namespace _UNIX_
 {
     internal partial class RPGOD : NUCLEON
     {

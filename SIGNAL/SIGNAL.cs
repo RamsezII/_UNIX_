@@ -1,7 +1,7 @@
 ﻿using System;
 using _UTIL_;
 
-namespace _ARK_
+namespace _UNIX_
 {
     public enum SIGT : byte
     {

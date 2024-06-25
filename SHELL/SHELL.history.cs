@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace _ARK_
+namespace _UNIX_
 {
     public partial class SHELL
     {

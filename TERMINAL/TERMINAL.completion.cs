@@ -1,6 +1,6 @@
-using _ARK_;
+using _UNIX_;
 
-namespace _CORE_
+namespace _UNIX_
 {
     public partial class TERMINAL
     {

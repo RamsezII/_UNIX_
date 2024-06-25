@@ -1,4 +1,4 @@
-﻿namespace _ARK_
+﻿namespace _UNIX_
 {
     public partial class SIGNAL
     {

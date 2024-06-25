@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace _CORE_
+namespace _UNIX_
 {
     public class TEXTFIELD : MonoBehaviour, IScrollHandler
     {

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using _UTIL_;
 
-namespace _ARK_
+namespace _UNIX_
 {
 #if UNITY_EDITOR
     [UnityEditor.InitializeOnLoad]
@@ -51,7 +51,6 @@ namespace _ARK_
         {
             base.Start();
             TakeFrontWindowsFocus();
-            NUCLEOR.onUpdate1 += OnUpdate;
 
             lock (LOG_CATCHER.logqueue)
             {
@@ -76,7 +75,7 @@ namespace _ARK_
 
         //----------------------------------------------------------------------------------------------------------
 
-        protected virtual void OnUpdate()
+        protected virtual void Update()
         {
             if (moveCaretToEnd)
             {
@@ -108,7 +107,6 @@ namespace _ARK_
         protected override void OnDestroy()
         {
             base.OnDestroy();
-            NUCLEOR.onUpdate1 -= OnUpdate;
             terminals.Remove(this);
             shell.Dispose();
             gluon.Dispose();

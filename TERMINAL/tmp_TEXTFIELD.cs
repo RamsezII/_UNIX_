@@ -1,6 +1,6 @@
 ﻿using TMPro;
 
-namespace _CORE_
+namespace _UNIX_
 {
     public class tmp_TEXTFIELD : TMP_InputField
     {

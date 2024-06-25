@@ -1,7 +1,7 @@
-﻿using _ARK_;
+﻿using _UNIX_;
 using System;
 
-namespace _CORE_
+namespace _UNIX_
 {
     partial class RPGOD
     {

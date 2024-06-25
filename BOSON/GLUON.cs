@@ -1,4 +1,4 @@
-namespace _ARK_
+namespace _UNIX_
 {
     /// <summary>
     /// GLUON is a type of BOSON that is used to manage the interaction between NUCLEON and SIGNAL.

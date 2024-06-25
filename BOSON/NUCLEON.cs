@@ -1,7 +1,7 @@
 using _UTIL_;
 using UnityEngine;
 
-namespace _ARK_
+namespace _UNIX_
 {
     public class NUCLEON : MonoBehaviour
     {

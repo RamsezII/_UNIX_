@@ -1,6 +1,6 @@
 ﻿using _UTIL_;
 
-namespace _ARK_
+namespace _UNIX_
 {
     public partial class TERMINAL_base
     {

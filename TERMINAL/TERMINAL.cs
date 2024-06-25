@@ -1,10 +1,9 @@
 using System.Collections.Generic;
-using _ARK_;
 using _UTIL_;
 using UnityEngine;
-using _V2_;
+using UnityEngine.EventSystems;
 
-namespace _CORE_
+namespace _UNIX_
 {
     public partial class TERMINAL : TERMINAL_base
     {
@@ -28,7 +27,7 @@ namespace _CORE_
 
         //----------------------------------------------------------------------------------------------------------
 
-        protected override void OnUpdate()
+        protected override void Update()
         {
             if (Util.PullValue(rebuildOutput))
                 RebuildOutput();
@@ -41,7 +40,7 @@ namespace _CORE_
             if (rebuildInput.PullValue())
                 RebuildInput();
 
-            base.OnUpdate();
+            base.Update();
 
             UpdateColor();
         }
@@ -62,14 +61,7 @@ namespace _CORE_
         public override void TakeLogFocus()
         {
             base.TakeLogFocus();
-            try
-            {
-                UIGOD.instance.eventSystem.SetSelectedGameObject(input_tf.field.gameObject);
-            }
-            catch
-            {
-
-            }
+            EventSystem.current.SetSelectedGameObject(input_tf.field.gameObject);
         }
 
         public override void Kill()

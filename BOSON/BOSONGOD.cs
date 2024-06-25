@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using _UTIL_;
 using UnityEngine;
 
-namespace _ARK_
+namespace _UNIX_
 {
     public class BOSONGOD : MonoBehaviour
     {
@@ -19,7 +19,6 @@ namespace _ARK_
                 bgod = this;
             else
                 throw new BOSON_EXCP("BOSONGOD already exists");
-            NUCLEOR.onLateUpdate += OnLateUpdate;
         }
 
         //----------------------------------------------------------------------------------------------------------
@@ -75,7 +74,7 @@ namespace _ARK_
 
         //----------------------------------------------------------------------------------------------------------
 
-        void OnLateUpdate()
+        private void LateUpdate()
         {
             if (collectDeadBosons.PullValue())
                 CollectDeadBosons();
@@ -94,8 +93,6 @@ namespace _ARK_
                     boson.Dispose();
                 bosons.Clear();
             }
-
-            NUCLEOR.onLateUpdate -= OnLateUpdate;
         }
     }
 }

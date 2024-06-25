@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Text;
-using _ARK_;
+using _UNIX_;
 using _UTIL_;
 using UnityEngine;
 
-namespace _CORE_
+namespace _UNIX_
 {
     public partial class TERMINAL
     {

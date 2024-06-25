@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace _ARK_
+namespace _UNIX_
 {
     internal static class LOG_CATCHER
     {

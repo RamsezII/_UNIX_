@@ -1,7 +1,7 @@
-using _ARK_;
+using _UNIX_;
 using UnityEngine;
 
-namespace _CORE_
+namespace _UNIX_
 {
     public partial class TERMINAL
     {

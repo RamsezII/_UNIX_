@@ -1,8 +1,8 @@
-﻿using _ARK_;
+﻿using _UNIX_;
 using System;
 using System.Collections.Generic;
 
-namespace _CORE_
+namespace _UNIX_
 {
     public class CORE_SHELL : SHELL
     {

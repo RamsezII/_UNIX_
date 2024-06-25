@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace _ARK_
+namespace _UNIX_
 {
     public class ECHO : BOSON
     {
