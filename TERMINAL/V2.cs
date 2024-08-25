@@ -5,13 +5,23 @@ namespace _UNIX_
     public class V2 : MonoBehaviour
     {
         public static V2 instance;
+
         public bool toggled;
+
+        //--------------------------------------------------------------------------------------------------------------
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+        static void OnAfterSceneLoad()
+        {
+            Util.InstantiateOrCreate<V2>();
+        }
 
         //--------------------------------------------------------------------------------------------------------------
 
         protected virtual void Awake()
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
 
         //--------------------------------------------------------------------------------------------------------------

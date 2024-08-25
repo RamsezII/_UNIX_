@@ -624,7 +624,7 @@ GameObject:
   - component: {fileID: 4185454650411919159}
   - component: {fileID: 7868836453296760874}
   m_Layer: 5
-  m_Name: _DIAMOND_
+  m_Name: _UNIX_.TERMINAL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
