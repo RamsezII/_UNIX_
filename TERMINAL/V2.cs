@@ -13,7 +13,7 @@ namespace _UNIX_
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         static void OnAfterSceneLoad()
         {
-            Util.InstantiateOrCreate<V2>();
+            Util.InstantiateOrCreateIfAbsent<V2>();
         }
 
         //--------------------------------------------------------------------------------------------------------------
