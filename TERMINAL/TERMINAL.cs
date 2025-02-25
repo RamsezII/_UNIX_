@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using _UTIL_;
-using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace _UNIX_
@@ -15,8 +14,6 @@ namespace _UNIX_
         {
             AwakeUI();
             base.Awake();
-            Application.targetFrameRate = 75;
-            QualitySettings.vSyncCount = 1;
         }
 
         public override void AssignShell(in SHELL shell)
