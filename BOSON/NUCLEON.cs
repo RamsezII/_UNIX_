@@ -5,7 +5,7 @@ namespace _UNIX_
 {
     public class NUCLEON : MonoBehaviour
     {
-        readonly ThreadSafe<bool> destroyed = new(true);
+        readonly ThreadSafe_struct<bool> destroyed = new(true);
 
         //----------------------------------------------------------------------------------------------------------
 

@@ -8,7 +8,7 @@ namespace _UNIX_
 {
     public partial class TERMINAL : TERMINAL_base
     {
-        readonly ThreadSafe<Queue<object>> allLogs = new(new());
+        readonly ThreadSafe_class<Queue<object>> allLogs = new(new());
 
         //----------------------------------------------------------------------------------------------------------
 
@@ -33,7 +33,7 @@ namespace _UNIX_
             AwakeUI();
             base.Awake();
 
-            USAGES.ToggleUser(this,true, UsageGroups.Keyboard, UsageGroups.Typing, UsageGroups.IngameMouse);
+            USAGES.ToggleUser(this, true, UsageGroups.Keyboard, UsageGroups.Typing, UsageGroups.IngameMouse);
         }
 
         public override void AssignShell(in SHELL shell)
@@ -46,7 +46,7 @@ namespace _UNIX_
 
         protected override void Update()
         {
-            if (Util.PullValue(rebuildOutput))
+            if (rebuildOutput.PullValue())
                 RebuildOutput();
 
             if (rebuildTemp.Value)

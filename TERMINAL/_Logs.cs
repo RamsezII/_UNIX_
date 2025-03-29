@@ -4,7 +4,7 @@ namespace _UNIX_
 {
     public partial class TERMINAL_base
     {
-        internal static readonly ThreadSafe<TERMINAL_base> logfocus = new();
+        internal static readonly ThreadSafe_class<TERMINAL_base> logfocus = new();
         public virtual void TakeLogFocus() => logfocus.Value = this;
 
         //----------------------------------------------------------------------------------------------------------

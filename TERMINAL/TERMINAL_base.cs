@@ -12,7 +12,7 @@ namespace _UNIX_
         protected SHELL shell;
         protected GLUON gluon;
         public bool rebuildInput = true;
-        protected readonly ThreadSafe<bool>
+        protected readonly ThreadSafe_struct<bool>
             refreshUI = new(true),
             rebuildOutput = new(true);
         bool moveCaretToEnd;

@@ -65,7 +65,7 @@ namespace _UNIX_
 
         public readonly bool autoDispose;
         public bool background, killable;
-        public readonly ThreadSafe<BOSON_STAT> state = new();
+        public readonly ThreadSafe_struct<BOSON_STAT> state = new();
         public readonly float startTime = Time.realtimeSinceStartup;
         public override string ToString() => $"{nameof(BOSON)}(pid:{PBID}; id:{BID}; name:{GetType().Name}; state:{state.Value}; task:{TASK_LOG}; start:{startTime.TimeLog()})";
 

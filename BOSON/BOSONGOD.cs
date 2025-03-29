@@ -9,7 +9,7 @@ namespace _UNIX_
         public static BOSONGOD instance;
         ushort _id;
         public readonly Dictionary<ushort, BOSON> bosons = new();
-        public static readonly ThreadSafe<bool> collectDeadBosons = new();
+        public static readonly ThreadSafe_struct<bool> collectDeadBosons = new();
 
         //----------------------------------------------------------------------------------------------------------
 

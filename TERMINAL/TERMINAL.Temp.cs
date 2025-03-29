@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Text;
-using _UNIX_;
 using _UTIL_;
 using UnityEngine;
 
@@ -9,7 +8,7 @@ namespace _UNIX_
     public partial class TERMINAL
     {
         readonly List<BOSON> temp_bosons = new();
-        readonly ThreadSafe<bool> rebuildTemp = new(true);
+        readonly ThreadSafe_struct<bool> rebuildTemp = new(true);
         float lastTemp;
         byte tempI;
 
