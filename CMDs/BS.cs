@@ -18,7 +18,7 @@
         {
             base.OnSignal(signal);
 
-            if (bid > 0 && BOSONGOD.bgod.bosons.TryGetValue(bid, out BOSON target))
+            if (bid > 0 && BOSONGOD.instance.bosons.TryGetValue(bid, out BOSON target))
                 target.OnSignal(signal);
             else
             {
@@ -31,8 +31,8 @@
 
                 b_out.OnSignal(signal.SubSignal($"{"PID",c_PID}{"ID",c_ID}{"STATE",c_STATE}{"NAME",c_NAME}{"TASK",c_TASK}TIME"));
 
-                lock (BOSONGOD.bgod.bosons)
-                    foreach (BOSON boson in BOSONGOD.bgod.bosons.Values)
+                lock (BOSONGOD.instance.bosons)
+                    foreach (BOSON boson in BOSONGOD.instance.bosons.Values)
                         b_out.OnSignal(signal.SubSignal($"{boson.PBID,c_PID}{boson.BID,c_ID}{boson.state.Value,c_STATE}{boson.GetType().Name,c_NAME}{boson.TASK_LOG,c_TASK}{boson.startTime.TimeLog()}"));
             }
 

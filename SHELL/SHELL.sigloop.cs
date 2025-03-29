@@ -154,7 +154,7 @@ namespace _UNIX_
                             if (BosonControl(out BOSON control))
                                 if (sig_last.sigtype >= SIGT.BUILD)
                                 {
-                                    BOSONGOD.bgod.PropagateIDs(control);
+                                    BOSONGOD.instance.PropagateIDs(control);
                                     if (background)
                                     {
                                         background = false;

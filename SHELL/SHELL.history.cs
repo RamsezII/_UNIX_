@@ -1,3 +1,4 @@
+using _ARK_;
 using System.Collections.Generic;
 using System.IO;
 
@@ -23,7 +24,7 @@ namespace _UNIX_
             {
                 history.Clear();
 
-                string path = Path.Combine(Util.HOME_DIR.FullName, nameof(SHELL) + ".history" + JSon.txt);
+                string path = Path.Combine(NUCLEOR.home_path.ForceDirPath(), nameof(SHELL) + ".history" + JSon.txt);
                 if (!File.Exists(path))
                     return;
 
@@ -38,7 +39,7 @@ namespace _UNIX_
                 if (history.Count == 0)
                     return;
 
-                string path = Path.Combine(Util.HOME_DIR.FullName, nameof(SHELL) + ".history" + JSon.txt);
+                string path = Path.Combine(NUCLEOR.home_path.ForceDirPath(), nameof(SHELL) + ".history" + JSon.txt);
                 using StreamWriter sw = File.CreateText(path);
 
                 for (int i = 0; i < history.Count; i++)

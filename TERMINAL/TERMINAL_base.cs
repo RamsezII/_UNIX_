@@ -1,15 +1,13 @@
 using System.Collections.Generic;
 using _UTIL_;
+using UnityEngine;
 
 namespace _UNIX_
 {
-#if UNITY_EDITOR
-    [UnityEditor.InitializeOnLoad]
-#endif
     public abstract partial class TERMINAL_base : NUCLEON, ISignal
     {
         public static TERMINAL_base frontFocus;
-        public static readonly HashSet<TERMINAL_base> terminals = new();
+        public static readonly List<TERMINAL_base> instances = new();
 
         protected SHELL shell;
         protected GLUON gluon;
@@ -22,17 +20,20 @@ namespace _UNIX_
 
         //----------------------------------------------------------------------------------------------------------
 
-        static TERMINAL_base()
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        static void OnBeforeSceneLoad()
         {
-            terminals.Clear();
+            instances.Clear();
         }
+
+        //----------------------------------------------------------------------------------------------------------
 
         protected override void Awake()
         {
             base.Awake();
             gluon = new GLUON(new(null, SIGT.BUILD, terminal: this), this);
-            BOSONGOD.bgod.PropagateIDs(gluon);
-            terminals.Add(this);
+            BOSONGOD.instance.PropagateIDs(gluon);
+            instances.Add(this);
         }
 
         public virtual void AssignShell(in SHELL shell)
@@ -41,7 +42,7 @@ namespace _UNIX_
                 throw new System.Exception($"{this} Shell already set");
             this.shell = shell;
             shell.b_out = shell.b_err = gluon;
-            BOSONGOD.bgod.PropagateIDs(shell);
+            BOSONGOD.instance.PropagateIDs(shell);
             shell.OnSignal(new(null, SIGT.BUILD, terminal: this));
         }
 
@@ -107,7 +108,7 @@ namespace _UNIX_
         protected override void OnDestroy()
         {
             base.OnDestroy();
-            terminals.Remove(this);
+            instances.Remove(this);
             shell.Dispose();
             gluon.Dispose();
         }

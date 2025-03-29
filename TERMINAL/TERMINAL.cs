@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using _ARK_;
 using _UTIL_;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace _UNIX_
@@ -10,10 +12,28 @@ namespace _UNIX_
 
         //----------------------------------------------------------------------------------------------------------
 
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+        static void OnAfterSceneLoad()
+        {
+            NUCLEOR.delegates.getInputs += () =>
+            {
+                if (instances.Count == 0)
+                    if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.T))
+                    {
+                        Util.InstantiateOrCreate<TERMINAL>(NUCLEOR.instance.canvas2D.transform);
+                        ((TERMINAL)instances[0]).AssignShell(new CORE_SHELL(SIGNAL.SIG_VOID));
+                    }
+            };
+        }
+
+        //----------------------------------------------------------------------------------------------------------
+
         protected override void Awake()
         {
             AwakeUI();
             base.Awake();
+
+            USAGES.ToggleUser(this,true, UsageGroups.Keyboard, UsageGroups.Typing, UsageGroups.IngameMouse);
         }
 
         public override void AssignShell(in SHELL shell)
@@ -64,7 +84,7 @@ namespace _UNIX_
         public override void Kill()
         {
             base.Kill();
-            if (terminals.Count == 1)
+            if (instances.Count == 1)
                 V2.instance.Toggle(false);
         }
     }

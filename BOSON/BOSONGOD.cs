@@ -6,19 +6,25 @@ namespace _UNIX_
 {
     public class BOSONGOD : MonoBehaviour
     {
-        public static BOSONGOD bgod;
+        public static BOSONGOD instance;
         ushort _id;
         public readonly Dictionary<ushort, BOSON> bosons = new();
         public static readonly ThreadSafe<bool> collectDeadBosons = new();
 
         //----------------------------------------------------------------------------------------------------------
 
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+        static void OnAfterSceneLoad()
+        {
+            Util.InstantiateOrCreateIfAbsent<BOSONGOD>();
+        }
+
+        //----------------------------------------------------------------------------------------------------------
+
         private void Awake()
         {
-            if (bgod == null)
-                bgod = this;
-            else
-                throw new BOSON_EXCP("BOSONGOD already exists");
+            instance = this;
+            DontDestroyOnLoad(gameObject);
         }
 
         //----------------------------------------------------------------------------------------------------------
@@ -84,8 +90,8 @@ namespace _UNIX_
 
         private void OnDestroy()
         {
-            if (bgod == this)
-                bgod = null;
+            if (instance == this)
+                instance = null;
 
             lock (bosons)
             {
