@@ -16,15 +16,16 @@ namespace _UNIX_
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         static void OnAfterSceneLoad()
         {
-            NUCLEOR.delegates.getInputs += () =>
-            {
-                if (instances.Count == 0)
-                    if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.T))
-                    {
-                        Util.InstantiateOrCreate<TERMINAL>(NUCLEOR.instance.canvas2D.transform);
-                        ((TERMINAL)instances[0]).AssignShell(new CORE_SHELL(SIGNAL.SIG_VOID));
-                    }
-            };
+            if (false)
+                NUCLEOR.delegates.getInputs += () =>
+                {
+                    if (instances.Count == 0)
+                        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.T))
+                        {
+                            Util.InstantiateOrCreate<TERMINAL>(NUCLEOR.instance.canvas2D.transform);
+                            ((TERMINAL)instances[0]).AssignShell(new CORE_SHELL(SIGNAL.SIG_VOID));
+                        }
+                };
         }
 #endif
 
