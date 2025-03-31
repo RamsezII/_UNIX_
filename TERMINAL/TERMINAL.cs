@@ -12,6 +12,7 @@ namespace _UNIX_
 
         //----------------------------------------------------------------------------------------------------------
 
+#if UNITY_EDITOR
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         static void OnAfterSceneLoad()
         {
@@ -25,6 +26,7 @@ namespace _UNIX_
                     }
             };
         }
+#endif
 
         //----------------------------------------------------------------------------------------------------------
 
